@@ -1,2 +1,65 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<div class="span5">
+  <div class="row">
+    <h3>foros</h3>
+    <ul>
+      <li class="nav-header">foro 1</li>
+      <li>comentario 1</li>
+      <li>comentario 2</li>
+
+      <li class="nav-header">foro 2</li>
+      <li>comentario 1</li>
+      <li>comentario 2</li>
+
+      <li class="nav-header">foro 3</li>
+      <li>comentario 1</li>
+      <li>comentario 2</li>
+    </ul>
+  </div>
+  <div class="row">
+    <h3>noticias</h3>
+    <ul>
+      <li class="nav-header">noticia 1</li>
+      <li>texto 1</li>
+
+      <li class="nav-header">noticia 2</li>
+      <li>texto 3</li>
+
+      <li class="nav-header">noticia 3</li>
+      <li>texto 3</li>
+
+    </ul>
+  </div>
+</div>
+<div class="span5">
+  <div class="row">
+    <h3>eventos</h3>
+    <ul>
+      <li class="nav-header"><%= Date.yesterday.to_s %></li>
+      <li>evento 1</li>
+      <li>evento 2</li>
+
+      <li class="nav-header"><%= Date.today.to_s %></li>
+      <li>evento 1</li>
+      <li>evento 2</li>
+
+      <li class="nav-header"><%= Date.tomorrow.to_s %></li>
+      <li>evento 1</li>
+      <li>evento 2</li>
+    </ul>
+  </div>
+  <div class="row">
+    <h3>noticias</h3>
+    <ul>
+      <li class="nav-header">Oferta 1 <%= Date.yesterday.to_s %></li>
+      <li>descripcion 1</li>
+
+      <li class="nav-header">Oferta 2 <%= Date.yesterday.to_s %></li>
+      <li>descripcion 2</li>
+
+      <li class="nav-header">Oferta 3 <%= Date.yesterday.to_s %></li>
+      <li>descripcion 3</li>
+
+    </ul>
+  </div>
+</div>

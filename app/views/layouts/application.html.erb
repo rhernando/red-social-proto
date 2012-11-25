@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RedSocialProto</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "App_Name" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "App_Name" %>">
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= yield(:head) %>
 </head>
-<body>
 
-<%= yield %>
-
+<body class="<%= controller_name %> <%= action_name %>">
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar-inner">
+    <div class="container">
+      <%= render 'layouts/navigation' %>
+    </div>
+  </nav>
+</div>
+<div id="main" role="main" class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <%= render 'layouts/aside' %>
+      </div>
+      <div class="span9">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+       </div>
+    </div>
+  <hr/>
+  <footer>
+  </footer>
+</div> <!--! end of #main -->
 </body>
 </html>
