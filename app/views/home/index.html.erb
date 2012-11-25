@@ -33,20 +33,17 @@
 </div>
 <div class="span5">
   <div class="row">
-    <h3>eventos</h3>
+    <h3><%= link_to "Eventos", eventos_path %></h3>
     <ul>
-      <li class="nav-header"><%= Date.yesterday.to_s %></li>
-      <li>evento 1</li>
-      <li>evento 2</li>
-
-      <li class="nav-header"><%= Date.today.to_s %></li>
-      <li>evento 1</li>
-      <li>evento 2</li>
-
-      <li class="nav-header"><%= Date.tomorrow.to_s %></li>
-      <li>evento 1</li>
-      <li>evento 2</li>
+      <%- @eventos.each do |evt|  %>
+          <li class="nav-header">
+            <strong><%= evt.titulo %></strong>
+            <%= evt.fecha %>
+          </li>
+      <%- end %>
+      <%= link_to 'New Evento', new_evento_path %>
     </ul>
+
   </div>
   <div class="row">
     <h3>noticias
