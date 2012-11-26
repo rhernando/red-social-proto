@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :authenticate_user!
+  before_filter :get_listas
+
+  protected
+  def get_listas
+    @eventos = Evento.all(:limit => 5)
+    @users = User.all(:limit => 5)
+
+  end
 
 
 end

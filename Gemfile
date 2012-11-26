@@ -32,7 +32,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'bootstrap-sass'
 
-gem 'forem', :git => "git://github.com/radar/forem.git"
+gem 'forem', :git => "https://github.com/radar/forem.git"
 gem 'will_paginate', '3.0.3'
 
 

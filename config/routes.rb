@@ -1,10 +1,12 @@
 RedSocialProto::Application.routes.draw do
 
+
   mount Forem::Engine, :at => "/forums"
 
   resources :eventos
 
   devise_for :users
+  match 'users/:id' => 'users#show', :as => :usuario
 
 
   get "home/index"

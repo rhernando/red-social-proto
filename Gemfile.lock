@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/radar/forem.git
+  remote: https://github.com/radar/forem.git
   revision: 51125583d1cd30c9bb06a0bd65168a3aea7dfdca
   specs:
     forem (1.0.0.beta1)
