@@ -1,3 +1,5 @@
+<div class="span4">
+
 <h1>Listing eventos</h1>
 
 <table>
@@ -25,3 +27,14 @@
 <br />
 
 <%= link_to 'New Evento', new_evento_path %>
+
+</div>
+<div class="span4">
+  <h2>Buscador</h2>
+  <%= text_field_tag 'fff', 'Inserte las palabras clave' %>
+  <%= label_tag 'categoría' %>
+  <%= select_tag 'ss', "<option>ofertas</option><option>seminarios</option><option>reuniones</option><option>ocio</option>".html_safe %>
+  <%= label_tag 'lugar' %>
+  <%= select_tag 'ss', "<option>cercano a ti</option><option>españa</option><option>europa</option><option>fuera</option>".html_safe %>
+  <%= button_to 'BUSCAR', '#', :method => "get", :class => "btn btn-primary " %>
+</div>
