@@ -8,4 +8,13 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+
+  def can_read_forem_forums?
+    true
+  end
+  def can_create_forem_topics?(forum)
+    true
+  end
+
+
 end
