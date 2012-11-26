@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126095157) do
+ActiveRecord::Schema.define(:version => 20121126104118) do
 
   create_table "eventos", :force => true do |t|
     t.date     "fecha"
@@ -115,6 +115,36 @@ ActiveRecord::Schema.define(:version => 20121126095157) do
   add_index "forem_views", ["updated_at"], :name => "index_forem_views_on_updated_at"
   add_index "forem_views", ["user_id"], :name => "index_forem_views_on_user_id"
   add_index "forem_views", ["viewable_id"], :name => "index_forem_views_on_topic_id"
+
+  create_table "gallery_galleries", :force => true do |t|
+    t.string   "title",                                :null => false
+    t.string   "identifier",                           :null => false
+    t.text     "description"
+    t.integer  "full_width",        :default => 640,   :null => false
+    t.integer  "full_height",       :default => 480,   :null => false
+    t.boolean  "force_ratio_full",  :default => false, :null => false
+    t.integer  "thumb_width",       :default => 150,   :null => false
+    t.integer  "thumb_height",      :default => 150,   :null => false
+    t.boolean  "force_ratio_thumb", :default => true,  :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+  end
+
+  add_index "gallery_galleries", ["identifier"], :name => "index_gallery_galleries_on_identifier"
+
+  create_table "gallery_photos", :force => true do |t|
+    t.integer  "gallery_id",                        :null => false
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.integer  "position",           :default => 0, :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
+
+  add_index "gallery_photos", ["gallery_id", "position"], :name => "index_gallery_photos_on_gallery_id_and_position"
 
   create_table "spud_admin_permissions", :force => true do |t|
     t.integer  "user_id"

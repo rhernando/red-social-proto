@@ -7,6 +7,7 @@ RedSocialProto::Application.routes.draw do
 
   devise_for :users
   match 'users/:id' => 'users#show', :as => :usuario
+  match 'amigos' => 'users#index', :as => :amigos
 
 
   get "home/index"

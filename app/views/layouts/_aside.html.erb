@@ -8,23 +8,25 @@
       links
     </li>
     <li>
-      <button class="btn btn-primary ">amigos</button>
-      <button class="btn btn-primary">noticias</button>
+      <p>
+          <%= button_to 'Mis amigos', amigos_path, :method => "get", :class => "btn btn-primary " %>
+          <%= button_to 'noticias', '#', :method => "get", :class => "btn btn-primary " %>
+      </p>
     </li>
     <li>
-      <button class="btn btn-primary">eventos</button>
-      <button class="btn btn-primary">recursos</button>
+      <%= button_to 'Eventos', eventos_path,:method => "get", :class => "btn btn-primary " %>
+      <%= button_to 'recursos', '#', :method => "get", :class => "btn btn-primary " %>
     </li>
     <li>
-      <button class="btn btn-primary">empleos</button>
-      <button class="btn btn-primary">estudios</button>
+      <%= button_to 'empleos', '#', :method => "get", :class => "btn btn-primary " %>
+      <%= button_to 'estudios', '#', :method => "get", :class => "btn btn-primary " %>
     </li>
     <li>
-      <button class="btn btn-primary">foros</button>
-      <button class="btn btn-primary">ofertas</button>
+      <%= button_to 'Foros', forem_path, :method => "get", :class => "btn btn-primary " %>
+      <%= button_to 'ofertas', '#', :method => "get", :class => "btn btn-primary " %>
     </li>
     <li class="nav-header">
-      mis amigos
+      <%= link_to 'Mis amigos', amigos_path %>
     </li>
     <%- @users.each do |usr| %>
         <p><%= link_to (image_tag avatar_url(usr)), usuario_path(usr) %></p>
